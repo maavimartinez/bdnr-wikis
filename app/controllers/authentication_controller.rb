@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
 class AuthenticationController < ApplicationController
+
+
   # POST /auth/login
   def show; end
 
   def login
-    session.delete(:current_user)
+    if(:current_user) 
+      session.delete(:current_user) 
+    end
     @user = User.find_by(username: params[:username])
     p @user.password != params[:password]
     if !(@user && @user.password == params[:password])
