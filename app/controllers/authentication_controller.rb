@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AuthenticationController < ApplicationController
-
+  skip_before_action :set_current_user
 
   # POST /auth/login
   def show; end
