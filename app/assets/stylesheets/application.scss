@@ -1,0 +1,499 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+
+#welcome-title{
+    font-size:70px;
+    font-weight: 300;
+    color:black;
+}
+
+.welcome-page {
+    //background-image: image-url('coupon.png');
+    background-color:white;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+
+#login-card {
+    background-color: rgb(29, 29, 29);
+    width: 40vw !important;
+    border-radius: 10px;
+    color: #494949;
+    box-shadow: 3px 3px 5px rgb(194, 194, 194);
+    padding: 20px;
+    padding-top:50px;
+}
+
+.loginField {
+    width: 200px;
+    font-size: 16px;
+    outline: none;
+    margin: 5px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.login-text-field{
+    border-radius: 50px;
+    border-width: 0px;
+    height:100%;
+    margin-bottom:3%;
+    color: #494949;
+    margin-left:13%;
+    width: 80%;
+}
+
+.loginBtn:hover {
+    background: rgb(87, 87, 87);
+    color:white;
+}
+
+.loginBtn {
+    width: 20vw;
+    border-radius: 50px;
+    border-width: 0px;
+    height: 30px;
+    font-size: 18px;
+    color: #494949;
+    background: white;
+    font-weight: 400!important;
+}
+
+.loginBtn{
+    margin-top:10px;
+    margin-bottom:10px;
+    background: linear-gradient(60deg,white,whitesmoke);
+    border-radius:50px;
+    height:40px;
+    color:black;
+    outline: none;
+    font-weight: 400!important;
+}
+
+
+#dont-account{
+    font-size: 15px;
+    color:white
+}
+
+
+.card-link:hover{
+    font-weight: 600;
+    color:white
+}
+
+.card-link {
+    color: white;
+    font-size: 24px;
+    padding-left:6px;
+    font-weight: 400;
+}
+
+.custom-file-label{
+    color:white;
+}
+
+.field {
+    width:80%;
+    margin-left:13%;
+    color: black;
+    text-align: center;
+}
+
+.form-group > label{
+   display: none;
+}
+
+.form-group{
+    margin-left:4%;
+    width:80%;
+}
+
+
+.newCoupon input {
+    font-size: 16px;
+    padding: 3px 5px;
+    border-radius: 20px;
+    border-width: 0px;
+    width:100%;
+    outline: none;
+    background-color:#e4e2e2;
+}
+
+
+label{
+    font-weight: 300;
+    font-size:15px;
+    color:white;
+    width: 10vw;
+    text-align: start;
+}
+
+#errLabel {
+    color: red;
+    display: none;
+}
+
+
+///NEW USER//
+
+.page{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-user-card{
+    height:40vh;
+    width: 40vw;
+    border-radius: 10px;
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-btn{
+    align-self: flex-start;
+    padding-left:30px;
+    font-size:20px;
+    color:white!important;
+}
+
+.back-btn :hover{
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.back-btn-black{
+    align-self: flex-start;
+    padding-left:30px;
+    font-size:20px;
+    color:black!important;
+}
+
+
+
+a{
+    color:white!important;
+}
+
+
+.field{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin:10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.row{
+    width: 100%;
+}
+
+
+.navbarr{
+    padding-left:20px;
+    padding-right:20px;
+    width: 100vw;
+    height:10vh!important;
+    min-height:10vh!important;
+    background-color: rgb(36, 36, 36);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: center;
+    align-items:center;
+    border-radius:0px;
+}
+
+.navbar-title{
+    color:white;
+    font-weight:400;
+    font-size:5vh;
+    float:left;
+}
+
+.home-page{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.repos-page{
+    background-color: #eeeeee;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.main-container{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #eeeeee;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+
+.left-container{
+    overflow: scroll;
+    background-color: white;
+    border-radius: 20px;
+    height: 80vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items:center;
+}
+
+
+.right-container{
+    overflow: scroll;
+    padding-top:50px;
+    background-color: #eeeeee;
+    height: 100%;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items:center;
+}
+
+.user-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    align-items:flex-start;
+    width: 80%;
+    height:10%;
+    background-color: white;
+    border-bottom: 0.3px solid rgb(182, 182, 182);
+    margin-top:30px;
+}
+
+.user-name{
+    color:black;
+    font-weight: 900;
+    font-size:30px;
+}
+
+
+.repositoriesTable{
+    width: 100%;
+}
+
+.repositories-name{
+    color:black;
+    font-weight: 900;
+    font-size:17px;
+    float:left;
+}
+
+.repos-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    align-items:flex-start;
+    width: 80%;
+    background-color: white;
+    margin-top:30px;
+}
+
+.repo{
+    color:black;
+    font-weight: 400;
+    font-size:20px;
+    float:left;
+}
+
+.new-repo-link{
+    color:black!important;
+    font-weight:500;
+    font-size:20px;
+    align-self: center;
+    padding-top:20px;
+}
+
+.new-page-link{
+    color:white!important;
+    font-weight:300;
+    font-size:20px;
+    margin-right:10%;
+    align-self: center;
+    border-radius: 50px;
+    padding:10px;
+    text-align: center;
+    background-color: black;
+}
+
+.new-page-link:hover{
+    color:white!important;
+    text-decoration: none;
+    background-color: rgb(78, 78, 78);
+}
+
+.action-repo-link{
+    color:black!important;
+    font-weight:500;
+    font-size:15px;
+    width: 80%;
+    align-self: flex-end;
+    padding-top:20px;
+}
+
+.repo-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin-bottom:20px;
+}
+
+.repo-body{
+    width: 100%;
+}
+
+.new-wiki-repo-name{
+    color:white;
+    font-size: 20px;
+    font-weight: 200;
+    align-self: center;
+}
+
+.new-wiki-form{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.new-wiki-card{
+    width: 40vw;
+    border-radius: 10px;
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+}
+
+.inputt{
+    width: 100%;
+}
+
+input{
+    width: 100%;
+}
+
+textarea{
+    width: 100%;
+}
+
+.wikis-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items:center;
+    width: 80%;
+    height:80%;
+    background-color: white;
+    border-radius:20px;
+    padding:20px;
+    margin-top:30px;
+}
+
+.pages-title{
+    align-self: flex-start;
+    color:black;
+    font-size: 20px;
+    padding-left:10%;
+    font-weight: 300;
+}
+
+.table-pages{
+    width: 100%;
+}
+
+.th-title{
+    width: 10%;
+    text-overflow: ellipsis;
+}
+
+.th-action{
+    width: 5%;
+    text-overflow: ellipsis;
+}
+
+.th-message{
+    width: 35%;
+    text-overflow: ellipsis;
+}
+
+.th-content{
+    width: 40%;
+    text-overflow: ellipsis;
+}
+
+.th-date{
+    width: 10%;
+    text-overflow: ellipsis;
+}
+
+.new-pages-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items:center;
+    width: 80%;
+    height:60%;
+    background-color: rgb(34, 34, 34);
+    border-radius:20px;
+    padding:20px;
+    margin-top:30px;
+}

@@ -1,0 +1,22 @@
+<%= form_with(model: wiki, local: true) do |form| %>
+  <% if wiki.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wiki.errors.count, "error") %> prohibited this wiki from being saved:</h2>
+
+      <ul>
+        <% wiki.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :repository_id %>
+    <%= form.text_field :repository_id %>
+  </div>
+
+  <div class="actions">
+  <%= form.submit 'Create', class: 'loginBtn'%>
+  </div>
+<% end %>

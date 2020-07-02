@@ -1,0 +1,26 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
+<div class="welcome-page">
+<h1 style="text-align: center" id="welcome-title"> Github </h1> <br> 
+    <div class="card-body" id="login-card">
+        <%= bootstrap_form_with url: '/auth/login' do |form| %>
+            <div class="row">
+                <div class="login-text-field">
+                <%= form.text_field :username, placeholder:"Username"%>
+                </div>
+            </div>
+            <div class="row">
+                <div class="login-text-field">
+                <%= form.password_field :password, placeholder: "Contraseña"%>
+                </div>
+            </div>
+            <div style="text-align: center">
+                <%= form.submit 'LOGIN', class: 'loginBtn'%>
+            </div>
+        <% end %>
+        <div class="notice"><%= notice %></div>
+        <div style="text-align: center">
+            <span id="dont-account">No tienes una cuenta? </span>
+            <a class="card-link" href="/users/new">Regístrate</a>
+        </div>
+    </div>
+</div>

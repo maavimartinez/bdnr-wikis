@@ -1,0 +1,46 @@
+<div class="repos-page">
+<div class="navbarr">
+<h2 class="navbar-title">GitHub</h2>
+</div>
+<div class="main-container">
+<div class="left-container">
+<div class="user-card">
+<div class="repo-row">
+<h2 class="user-name"><%=@current_user['username'].gsub(/\s+/, "").downcase %></h2>
+<%= link_to 'Nuevo Repositorio', new_repository_path, class:'new-repo-link' %>
+</div>
+
+</div>
+<div class="repos-card">
+<h2 class="repositories-name">Repositorios</h2>
+
+<table class="repositoriesTable">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody class="repo-body">
+    <% @repositories.each do |repository| %>
+      <tr class="repo-row">
+      <td class="repo"><%= repository.name %></td>
+        <%if repository.wiki%>
+        <td><%= link_to "Ver Wiki",{controller:"wikis", action: "show", id: repository.wiki.id},class:'action-repo-link' %></td>
+        <%end%> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<div class="user-card">
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+</div>

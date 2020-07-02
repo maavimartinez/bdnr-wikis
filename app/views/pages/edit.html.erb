@@ -1,0 +1,54 @@
+<div class="home-page">
+<div class="navbarr">
+<h2 class="navbar-title">GitHub</h2>
+</div>
+<h1>Edit Page</h1>
+<div class="new-pages-card">
+<div class="new-wiki-form">
+<%= form_with(model: @page, local: true) do |form| %>
+    <% if @page.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+  
+        <ul>
+          <% @page.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+    <%= form.label :title %>
+    <div class="inputt">
+    <%= form.text_field :title %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <div class="inputt">
+    <%= form.text_area :content %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <div class="inputt">
+    <%= form.text_area :message %>
+    </div>
+  </div>
+
+    <%= form.hidden_field :wiki_id, :value => @wiki_id %>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+  </div>
+
+</div>
+</div>
+
+
+
