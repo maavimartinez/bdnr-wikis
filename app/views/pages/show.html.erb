@@ -1,29 +1,59 @@
-<p id="notice"><%= notice %></p>
+<div class="repos-page">
 
-<p>
-  <strong>Title:</strong>
-  <%= @page.title %>
-</p>
+  <div class="navbarr">
+    <div class="navbarr-row">
+      <div class="back-btn-navbar"><%= link_to '<--', {controller: "wikis", action:"show", id:@page.wiki_id},class:'new-page-link'  %></div>
+      <h2 class="navbar-title">GitHub</h2>
+    </div>
+    <h2 class="navbar-title"><%=@current_user['username'] %></h2>
+  </div>
 
-<p>
-  <strong>Last modification date:</strong>
-  <%= @page.last_modification_date %>
-</p>
+  <div class="main-container">
 
-<p>
-  <strong>Content:</strong>
-  <%= @page.content %>
-</p>
+    <div class="left-container">
+      <div class="repo-row">
+      <h2 class="wiki-title"><%=@page.title%></h2>
+      <%= link_to 'Editar', edit_page_path(@page) ,class:'edit-page-history'%>
+      </div>
+      <div class="repo-col">
+      <h3 class="wiki-data-label">CONTENIDO</h3>
+      <h3 class="wiki-data"><%=@page.content%></h3>
+      </div>
+      <div class="repo-col">
+      <h3 class="wiki-data-label">MENSAJE</h3>
+      <h3 class="wiki-data"><%=@page.message%></h3>
+      </div>
+      <div class="repo-col">
+      <h3 class="wiki-data-label">ÚLTIMA FECHA DE MODIFICACIÓN</h3>
+      <h3 class="wiki-data"><%=@page.last_modification_date.strftime("%d/%m/%Y %k:%M")%></h3>
+      </div>
+    </div>
 
-<p>
-  <strong>Message:</strong>
-  <%= @page.message %>
-</p>
+    <div class="right-container">
+      <div class="repo-row">
+        <h2 class="wiki-data-label-2">HISTORIAL
+      </div>
+      
+      <% @page.history.each do |a| %>
+        <div class="history-item">
+          <div class="history-row">
+            <h2 class="wiki-data"><%=a['title']%></h2>
+            <h3 class="history-item-label-2"><%=a['last_modification_date'].strftime("%d/%m/%Y %k:%M")%></h3>
+          </div>
+          <div class="history-col">
+            <h3 class="history-item-label-2">CONTENIDO</h3>
+            <h3 class="wiki-data"><%=a['content']%></h3>
+          </div>
+          <div class="history-col">
+            <h3 class="history-item-label-2">MENSAJE</h3>
+            <h3 class="wiki-data"><%=a['message']%></h3>
+          </div>
+        </div>
+        <% end %>
 
-<p>
-  <strong>Wiki:</strong>
-  <%= @page.wiki_id %>
-</p>
 
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+
+    </div>
+
+  </div>
+</div>

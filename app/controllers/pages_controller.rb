@@ -79,6 +79,12 @@ class PagesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_page
       @page = Page.find(params[:id])
+      p "-------------------------------------"
+      @page.history.each do |a|
+        p a
+      end
+      
+      p "-------------------------------------"
     end
 
     # Only allow a list of trusted parameters through.

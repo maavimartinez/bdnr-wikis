@@ -1,12 +1,15 @@
 <div class="repos-page">
 <div class="navbarr">
+<div class="navbarr-row">
+<div class="back-btn-navbar"><%= link_to '<--', repositories_path,class:'new-page-link'  %></div>
 <h2 class="navbar-title">GitHub</h2>
+</div>
 <h2 class="navbar-title"><%=@current_user['username'] %></h2>
 </div>
 <div class="wikis-card">
-<h2 class="user-name"><%=@repository['name']%></h2>
 <div class="repo-row">
-<h1 class="pages-title">Pages</h1> <%= link_to 'New Page', {controller:'pages', action:'newPage', wiki_id:@wiki.id}, class:'new-page-link'%>
+<h2 class="wiki-title">Wiki <%=@repository['name']%>
+</h2><%= link_to 'New Page', {controller:'pages', action:'newPage', wiki_id:@wiki.id}, class:'new-page-link'%>
 </div>
 <p id="notice"><%= notice %></p>
 <div class="repo-row">
@@ -17,7 +20,7 @@
       <th class="th-title">Titulo</th>
       <th class="th-content">Contenido</th>
       <th class="th-message">Mensaje</th>
-      <th class="th-date">Última fecha de modificación</th>
+      <th class="th-date">Fecha</th>
       <th class="th-action"colspan="1"></th>
     </tr>
   </thead>
