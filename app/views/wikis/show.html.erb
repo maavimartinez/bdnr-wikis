@@ -9,7 +9,7 @@
 <div class="wikis-card">
 <div class="repo-row">
 <h2 class="wiki-title">Wiki <%=@repository['name']%>
-</h2><%= link_to 'New Page', {controller:'pages', action:'newPage', wiki_id:@wiki.id}, class:'new-page-link'%>
+</h2><%= link_to '+ Página', {controller:'pages', action:'newPage', wiki_id:@wiki.id}, class:'new-page-link'%>
 </div>
 <p id="notice"><%= notice %></p>
 <div class="repo-row">
@@ -32,8 +32,8 @@
         <td class="th-content"><%= page.content %></td>
         <td class="th-message"><%= page.message %></td>
         <td class="th-date"><%= page.last_modification_date.strftime("%d/%m/%Y %k:%M")%></td>
-        <td class="th-action"><%= link_to 'Show', page,class:'action-repo-link' %></td>
-        <td><%= link_to 'Edit', edit_page_path(page) ,class:'action-repo-link'%></td>
+        <td class="th-action"><%= link_to 'Ver', page,class:'action-repo-link' %></td>
+        <td><%= link_to 'Editar', edit_page_path(page) ,class:'action-repo-link'%></td>
       </tr>
     <% end %>
   </tbody>
