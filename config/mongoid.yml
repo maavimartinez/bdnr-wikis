@@ -162,3 +162,18 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+
+production:
+  # Configure available database clients. (required)
+  clients:
+    # Defines the default client. (required)
+    default:
+      # Defines the name of the default database that Mongoid can connect to.
+      # (required).
+      # Provides the hosts the default client can connect to. Must be an array
+      # of host:port pairs. (required) 
+      #poner esto en heroku
+      uri: mongodb://bdnr-ort:bdnr-ort@bdnr-wikis-shard-00-00.alfl6.gcp.mongodb.net:27017,bdnr-wikis-shard-00-01.alfl6.gcp.mongodb.net:27017,bdnr-wikis-shard-00-02.alfl6.gcp.mongodb.net:27017/bdnr-wikis?ssl=true&replicaSet=atlas-qg3hjp-shard-0&authSource=admin&retryWrites=true&w=majority
+      options:
+        server_selection_timeout: 5
