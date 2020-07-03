@@ -26,6 +26,7 @@
     <% @repositories.each do |repository| %>
       <tr class="repo-row">
       <td class="repo"><%= repository.name %></td>
+      <td><%= link_to "Agregar colaborador",{controller:"repositories", action: "addCollaboratorShow", id: repository.id},class:'action-repo-link' %></td>
         <%if repository.wiki%>
         <td><%= link_to "Ver Wiki",{controller:"wikis", action: "show", id: repository.wiki.id},class:'action-repo-link' %></td>
         <%end%> 

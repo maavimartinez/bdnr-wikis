@@ -1,0 +1,22 @@
+
+<div class="home-page">
+<div class="navbarr">
+<h2 class="navbar-title">GitHub</h2>
+</div>
+<h1>Add collaborator</h1>
+<div class="new-user-card">
+<%= form_with(model: @userToAdd, local: true) do |form| %>
+   
+  
+    <div class="field">
+      <%= form.label :username %>
+      <%= form.text_field :username %>
+    </div>
+  
+    <%= button_tag "Agregar", {:controller => "repositories", :name => "submit", :value => "addCollaborator"} %>
+  <% end %>
+  
+
+<div class="back-btn"><%= link_to 'Back', repositories_path %></div>
+</div>
+</div>

@@ -4,5 +4,5 @@ class User
   field :email, type: String
   field :password, type: String
 
-  has_many :repository
+  has_and_belongs_to_many :repositories
 end

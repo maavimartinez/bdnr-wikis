@@ -3,5 +3,5 @@ class Repository
   field :name, type: String
   
   has_one :wiki
-  belongs_to :user
+  has_and_belongs_to_many :users
 end

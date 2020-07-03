@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get '/repositories/addCollaboratorShow/:id', to: 'repositories#addCollaboratorShow'
+  post '/repositories/addCollaboratorShow/:id', to: 'repositories#addCollaborator'
   resources :users
   resources :revisions
   resources :pages

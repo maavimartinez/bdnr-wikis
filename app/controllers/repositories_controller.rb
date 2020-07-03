@@ -1,10 +1,26 @@
 class RepositoriesController < ApplicationController
-  before_action :set_repository, only: [:show, :edit, :update, :destroy]
+  before_action :set_repository, only: [:show, :edit, :update, :destroy, :addCollaborator, :addCollaboratorShow]
 
   # GET /repositories
   # GET /repositories.json
   def index
-    @repositories = Repository.includes(:wiki).all
+    @repositories = Repository.includes(:wiki).includes(:users).all
+  end
+
+  def addCollaboratorShow
+    @userToAdd
+  end
+
+  def addCollaborator
+    @user = User.find_by(username: repository_params[:username])
+    if @user
+      @repository.users.push(@user)
+      redirect_to '/home'
+    else
+      
+    end
+    
+   
   end
 
   # GET /repositories/1
@@ -24,8 +40,11 @@ class RepositoriesController < ApplicationController
   # POST /repositories
   # POST /repositories.json
   def create
-    @repository = Repository.new(name:repository_params[:name], user: @current_user)
+    @repository = Repository.new(name:repository_params[:repository][:name], users:[])
+    p @current_user["_id"]
+    @user = User.find(@current_user["_id"])
       if @repository.save
+        @repository.users.push(@user)
         @wiki = Wiki.create!(repository_id: @repository.id)
         redirect_to '/home' 
       else
@@ -65,6 +84,6 @@ class RepositoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def repository_params
-      params.require(:repository).permit(:name)
+      params.permit!
     end
 end

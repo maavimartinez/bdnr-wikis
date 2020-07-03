@@ -5,8 +5,8 @@ class Page
   field :content, type: String
   field :message, type: String
   field :history, type: Array
-
-  has_one :user
+  
+  embeds_one :user
   belongs_to :wiki
   embeds_many :pages, :class_name => Page.to_s, :store_as => :array
 end

@@ -30,7 +30,12 @@ class PagesController < ApplicationController
   # POST /pages.json
   def create
     @page = Page.new(history:[],wiki_id: page_params[:page][:wiki_id],title: page_params[:page][:title], message: page_params[:page][:message], content:page_params[:page][:content], last_modification_date: Time.zone.now() )
-    
+    user = {
+      username: @current_user['username'],
+      id: @current_user['_id'],
+      email: @current_user['email']
+    }
+    @page.user = user;
       if @page.save
         redirect_to '/wikis/'+page_params[:page][:wiki_id]
         
@@ -43,8 +48,12 @@ class PagesController < ApplicationController
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
   def update
-
-    @oldPage = {title: @page.title, content: @page.content, message: @page.message, last_modification_date: @page.last_modification_date}
+    us = {
+      username: @page.user.username,
+      id: @page.user.id,
+      email: @page.user.email
+    }
+    @oldPage = {user: us, title: @page.title, content: @page.content, message: @page.message, last_modification_date: @page.last_modification_date}
     if @page.history != nil
       @oldHistory = @page.history
       @oldHistory.unshift(@oldPage)
@@ -52,12 +61,20 @@ class PagesController < ApplicationController
       @oldHistory = Array.new
       @oldHistory.unshift(@page)
     end
+    us = {
+      username: @current_user['username'],
+      id: @current_user['_id'],
+      email: @current_user['email']
+    }
       if @page.update!(
+        user: us,
         title: page_params[:page][:title],
          message: page_params[:page][:message],
           content:page_params[:page][:content],
            last_modification_date: Time.zone.now(),
            history: @oldHistory )
+           @page.update!(user: nil)
+           @page.update!(user: us)
         redirect_to '/wikis/'+@page.wiki_id
       else
         render :edit 
@@ -79,12 +96,6 @@ class PagesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_page
       @page = Page.find(params[:id])
-      p "-------------------------------------"
-      @page.history.each do |a|
-        p a
-      end
-      
-      p "-------------------------------------"
     end
 
     # Only allow a list of trusted parameters through.
